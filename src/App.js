@@ -4,7 +4,7 @@ import axios from "axios";
 
 import Form from './components/Form';
 import Weather from './components/Weather';
-import useIconWeather from "./components/useIconWeather";
+// import useIconWeather from "./components/useIconWeather";
 //--------------------------------------------------------------
 
 
@@ -102,11 +102,12 @@ const App = ()=>
 
     </div>
     )
-  }else{
-
-    var icon =useIconWeather(data.weather[0].main);
-
   }
+  // else{
+
+  //   var icon =useIconWeather(data.weather[0].main);
+
+  // }
 
 
   return (
@@ -117,7 +118,7 @@ const App = ()=>
       
       <Form animate={animate} handleInput= {handleInput} inputValue={inputValue} handleSubmit={handleSubmit} />
 
-      <Weather loading={loading} icon={icon} data={data}/>
+      <Weather loading={loading} icon={data.weather[0].main} data={data}/>
 
     </div>
   )

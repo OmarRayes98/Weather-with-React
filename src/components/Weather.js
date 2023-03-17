@@ -8,12 +8,59 @@ import {
 } from "react-icons/bs";
 
 import {TbTemperatureCelsius} from 'react-icons/tb';
+import {
+    IoMdSunny,
+    IoMdRainy,
+    IoMdCloudy,
+    IoMdSnow,
+    IoMdThunderstorm,
+} from "react-icons/io";
+
+import {
+    BsCloudHaze2Fill,
+    BsCloudDrizzleFill,
+} from "react-icons/bs";
+
+
 
 
 const Weather= (props)=> {
 
     const {loading, icon,data } = props;
     const date = new Date();
+
+    var i;
+    switch(icon){
+        case 'Clouds':
+          i = <IoMdCloudy/> ;
+          break;
+        
+        case 'Haze':
+            i = <BsCloudHaze2Fill/> ;
+            break;
+    
+        case 'Rain':
+          i = <IoMdRainy style={{color : "#31cafb"}}/> ;
+          break;
+        
+        case 'Clear':
+            i = <IoMdSunny style={{color : "#ffde33"}}/> ;
+            break;
+    
+        case 'Drizzle':
+            i = <BsCloudDrizzleFill style={{color : "#31cafb"}}/> ;
+            break;
+    
+        case 'Snow':
+            i = <IoMdSnow style={{color : "#31cafb"}}/> ;
+            break;
+      
+        case 'Thunderstorm':
+            i = <IoMdThunderstorm/> ;
+            break;
+        default:
+            console.log("error")
+      }
 
 
         return(
@@ -35,7 +82,7 @@ const Weather= (props)=> {
             {/* card top */}
             <div className="card-top d-flex  align-items-center ">
                     <div className="icon">
-                    {icon}
+                    {i}
                     </div>
         
                     <div>

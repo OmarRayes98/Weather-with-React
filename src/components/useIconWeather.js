@@ -48,6 +48,8 @@ let icon ;
         case 'Thunderstorm':
             icon = <IoMdThunderstorm/> ;
             break;
+        default:
+            console.log("error")
       }
 
       return icon;
