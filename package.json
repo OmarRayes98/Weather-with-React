@@ -21,8 +21,8 @@
     "start": "react-scripts start",
 
     "build": "react-scripts build",
-    "predeploy": "npm run build nojekyll out/.nojekyll",
-    "deploy": "gh-pages -d build out -t true",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d buildj",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
